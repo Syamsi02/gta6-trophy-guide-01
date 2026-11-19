@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Platinum Road — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="paper">
+<header class="top">
+  <div>
+    <h1>Platinum Road</h1>
+    <p class="sub">An offline GTA VI trophy guide and tracker for all 55 PlayStation 5 trophies.</p>
+    <p class="honest">GTA VI released today. Every guide here is written from the official trophy descriptions and is marked <strong>not yet checked in the game</strong>. No invented locations are presented as fact.</p>
+  </div>
+  <div class="progress-box" aria-label="Progress">
+    <div class="progress-num"><span id="earnedCount">0</span><span class="of">/ 55 earned</span></div>
+    <div class="bar"><div id="barFill" class="bar-fill" style="width:0%"></div></div>
+    <div class="progress-pct" id="progressPct">0% to platinum</div>
+    <button id="themeBtn" type="button">Night theme</button>
+  </div>
+</header>
+
+<nav class="views" aria-label="Views">
+  <button id="viewChecklist" type="button" class="view-btn active">Checklist</button>
+  <button id="viewRoadmap" type="button" class="view-btn">Roadmap to Platinum</button>
+  <button id="viewMissables" type="button" class="view-btn">Missables</button>
+</nav>
+
+<section class="toolbar" aria-label="Filters">
+  <label>Search <input id="search" type="search" placeholder="Trophy or mission name…"></label>
+  <label>Kind
+    <select id="kind">
+      <option value="all">All kinds</option>
+      <option value="story">Story</option>
+      <option value="missable">Missable</option>
+      <option value="collectibles">Collectibles</option>
+      <option value="activities">Activities</option>
+      <option value="online">Online</option>
+    </select>
+  </label>
+  <label>Grade
+    <select id="grade">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label class="check"><input id="spoiler" type="checkbox"> Hide story spoilers until earned</label>
+  <button id="exportBtn" type="button">Export progress</button>
+  <label class="import">Import progress <input id="importFile" type="file" accept="application/json"></label>
+  <button id="resetBtn" type="button">Reset</button>
+</section>
+
+<main>
+  <section id="checklistView" class="view">
+    <div class="layout">
+      <div class="list-col">
+        <p id="resultCount" class="result-count"></p>
+        <ul id="trophyList" class="trophy-list"></ul>
+        <p id="emptyState" class="empty" hidden>No trophies match these filters. The official list has no online trophies, so the Online filter is empty by design.</p>
+      </div>
+      <aside id="detail" class="detail" aria-label="Trophy guide"></aside>
+    </div>
+  </section>
+
+  <section id="roadmapView" class="view" hidden>
+    <h2>Roadmap to the platinum</h2>
+    <p class="roadmap-intro">Five stages, in order, built from the official descriptions. Story first, because chapter and mission trophies are the ones flagged missable here; the long counts last, because they grow while you play.</p>
+    <ol id="roadmapStages" class="roadmap"></ol>
+    <p class="roadmap-note">Missable means: do it before the story moves past it. Whether GTA VI lets you replay a missed mission is <strong>not yet checked in the game</strong>, so keep a save at the start of each chapter.</p>
+  </section>
+
+  <section id="missablesView" class="view" hidden>
+    <h2>Missable trophies</h2>
+    <p>These 21 trophies are flagged missable: they are tied to a story chapter, a single mission, or a one-off moment. Do them when they come up; everything else can be cleaned up after the story.</p>
+    <ul id="missableList" class="trophy-list"></ul>
+  </section>
+</main>
+
+<footer>
+  <p>Sources: the official 55-trophy list as published on <a href="https://www.exophase.com/game/grand-theft-auto-vi-psn/trophies/">Exophase</a> (names, descriptions, grades) and <a href="https://psnprofiles.com/trophies/grand-theft-auto-vi">PSNProfiles</a> (PSN counts). Each trophy's guide cites its sources beside it. Advice is our own, written from the official descriptions — not yet checked in the game.</p>
+  <p>Unofficial fan guide. Not affiliated with Rockstar Games. No Rockstar logo or artwork is used. Works fully offline; progress is saved only in your browser.</p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
